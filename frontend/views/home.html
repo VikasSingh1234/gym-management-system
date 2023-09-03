@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- awesome fonts -->
+    <script src="https://kit.fontawesome.com/c3abce34d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="frontend/styles/home.css">
+    <script src="frontend/scripts/homescript.js"></script>
+    <title>Fitness Center</title>
+</head>
+
+<body onload="showButton('<%= data %>');">
+
+    <nav id="home" class="navbar navbar-expand-lg">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">
+                <h2>Fitness <span>Center</span></h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-lg-3"></div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">
+                            Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="#about">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="#about">About Us</a>
+                    </li>
+
+                    <li id="log" class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="login.html">Login</a>
+                    </li>
+                    
+                    <li id="sign" class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="signup.html">Sign Up</a>
+                    </li>
+
+                    <li id="join" class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="frontend/views/registration.html">JOIN US</a>
+                    </li>
+
+                    <li id="logout" class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="logout.html">LOGOUT</a>
+                    </li>
+
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- ############################ main-section ################-->
+
+    <section class="main py-5">
+        <div class="container text-white py-5">
+            <div class="row py-3">
+                <div class="col-lg-10">
+                    
+                    <h1 class="m-0">BE STRONG <br>
+                        <span>TRAIN HARD </span> <br>
+                        WITH US
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ######### services  ################## -->
+    
+    <div id="services" class="services py-5">
+        <div class="container py-5 text-center">
+    
+            <h1>OUR SERVICES</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="card back border-0 p-3">
+                        <div class="card-body">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <h5 class="py-3">WEIGHT LIFTING</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+
+    <!-- ######### section more  ################## -->
+
+    <div class="section more py-5">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-6 mb-3">
+                    <img src="frontend/assets/cycle.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="pb-3">WE'VE SKILL IN <br>
+                        WIDE <span>RANGE OF FITNESS</span> AND <br>
+                        OTHER BODY HEALTH FACILITY
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vero voluptatibus, odio
+                        eveniet impedit harum earum deleniti molestiae obcaecati ipsa necessitatibus id liberuptates
+                        amet.</p>
+
+                    <button class="btn1 mt-4">JOIN US</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ######### discover  ################## -->
+
+    <div id="pricing" class="discover py-5">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-8 m-auto text-white text-center">
+                    <p>DISCOVER YOUR POTENTIAL</p>
+                    <h1>TAKE SUBSCRIPTION NOW AND GET <br> <span>SUMMER 25% </span>DISCOUNT</h1>
+
+                    <button class="btn1 mt-5">JOIN TODAY</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ################# details  ################## -->
+    <div  class="details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 mb-2">
+                    <div class="card back border-0 py-5 px-3">
+                        <div class="card-body">
+                            <h5>MODERN EQUIPMENT</h5>
+                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
+                                ratione optio, culpa odio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- #####################  footer  ##################### -->
+
+    <div id="about" class="footer">
+        <div class="container py-4">
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <h4>Fitness Center</h4>
+                    <p class="py-4">
+                        Welcome to Fitness center, your path to a stronger, healthier you. Join our community today for expert guidance,
+                        top-notch facilities, and a supportive environment. Let's achieve your fitness goals together!
+                    </p>
+
+
+                    <span class="social"><i class="fa-brands fa-facebook"></i></span>
+                    <span class="social"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="social"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="social"><i class="fa-brands fa-linkedin"></i></span>
+                </div>
+                <div class="col-lg-1"></div>
+                
+
+                <div class="col-lg-4">
+                    <h5 class="pb-4">LOCATION</h5>
+                    <p>Thapar University,near H-hostel,<br> patiala, 147004.</p>
+                    <p class="link pt-4">+91787-653675</p>
+                    <p class="link">fitnesscenter@gmail.com</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card text-center py-2">
+                            <p>Copyright © 2023 Fitness center. All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

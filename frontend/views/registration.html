@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Fitness Center | Membership Registration</title>
+</head>
+
+<body style="background-color: rgb(171, 236, 236);">
+
+    <!----------------------- Main Container -------------------------->
+    <br>
+    <br>
+    <br>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light-blue">
+        <form required action="/registration.html" method="post">
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+            <div>
+                <center>
+                    <h2>Registeration Form</h2>
+                </center>
+            </div>
+
+            <div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="firstname"></label>
+                        <input name="a1" required type="text" class="form-control" id="firstname" aria-describedby="firstname"
+                            placeholder="First Name">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="lastname"></label>
+                        <input name="a2" required type="text" class="form-control" id="lastname" aria-describedby="lastname"
+                            placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address1"></label>
+                    <input name="a3" required type="text" class="form-control" id="address1" aria-describedby="address1"
+                        placeholder="Address Line-1">
+                </div>
+                <div class="mb-3">
+                    <label for="address2"></label>
+                    <input name="a4" required type="text" class="form-control" id="address2" aria-describedby="address2"
+                        placeholder="Address Line-2">
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="city"></label>
+                        <input name="a5" required type="text" class="form-control" id="city" aria-describedby="city" placeholder="City">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="state"></label>
+                        <input name="a6" required type="text" class="form-control" id="state" aria-describedby="state" placeholder="state">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="weight"></label>
+                        <input name="a7" required type="number" class="form-control" id="weight" aria-describedby="weight"
+                            placeholder="Current Weight">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="goalweight"></label>
+                        <input name="a8" required type="number" class="form-control" id="goalweight" aria-describedby="goalweight"
+                            placeholder="Goal weight">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="age"></label>
+                        <input name="a9" required type="number" class="form-control" id="age" aria-describedby="age" placeholder="Age">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="height"></label>
+                        <input name="a10" required type="number" class="form-control" id="height" aria-describedby="height"
+                            placeholder="Height">
+                    </div>
+                </div>
+
+
+                
+
+                <div class="mb-3">
+                    <label for="description"></label>
+                    <textarea name="a11" class="form-control" id="description" placeholder="Health Conditon (if any)"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <p style="font-size: 12px;">
+
+                        I realize that my answers to the above questions will be considered by Fitness Center in
+                        determining whether I shall be permitted to participate in certain programs offered. I certify
+                        that my answers are true and correct and in the event that any answers should prove to be
+                        untrue, I release Fitness center from any and all liability, loss cost, damage and expenses
+                        resulting from its reliance thereof.
+
+                    </p>
+                </div>
+                <center>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </center>
+            </div>
+
+        </div>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

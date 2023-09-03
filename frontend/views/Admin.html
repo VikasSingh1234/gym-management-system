@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #personal_training{
+            color:black; 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-decoration: double;
+            height: 40px;
+            line-height: 40px;
+            
+        }
+        #personal_training:hover{
+            background-color: #de3838;
+            transition: all .4s;
+            color: white;
+            cursor: pointer;
+        }
+
+        #options{
+            font-family:Arial, Helvetica, sans-serif;
+            /* border: 1px solid white; */
+            width: 100vh;
+            margin-left: -70%;
+            margin-top: 10%;
+            
+        }
+        #options a{
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            margin: 20px;
+            border: 1px solid white;
+            padding: 10px 20px;
+        }
+
+        #output{
+            /* border: 1px solid white; */
+            height: 400px;
+            width: 1200px;
+            margin-top: 50px;
+            margin-left: -155%;
+            border-radius: 10px;
+        }
+        
+    </style>
+    <script>
+        
+        function run(){
+            // var usertype = '<%= type %>' ;
+
+            // if(usertype == 'Normal'){ // normal
+            //     // do not hide button 
+            // }else{
+            //     // personal  training 
+            //     // hide button
+            //     var personal_button = document.getElementById('personal_training');
+            //     personal_button.style.display = "none";
+            // }
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- awesome fonts -->
+    <script src="https://kit.fontawesome.com/c3abce34d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="frontend/styles/home.css">
+    <title>Fitness Center | Member</title>
+</head>
+
+<body onload="run();">
+
+
+    <nav id="home" class="navbar navbar-expand-lg">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">
+                <h2>Fitness <span>Center</span></h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-lg-5"></div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plan">Workout Plan</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="#about">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="#about">About Us</a>
+                    </li>
+                    <li id="logout" class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="logout.html">LOGOUT</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- ############################ main-section ################-->
+
+    <section class="main main d-flex py-5 px-5 justify-content-center align-items-center">
+    
+        <!----------------------- Main Container -------------------------->
+        <div style="margin-top: 0px;" class="col-lg-3 container justify-content-center align-items-center">
+            <div style="color: #de3838; font-size: 20px;" class="row border rounded-5 p-3 bg-white shadow box-area">
+                <div class="col-lg-3 justify-content-center align-items-center text-center">
+                    
+                </div>
+                <div class="col-lg-6 justify-content-center align-items-center text-center">
+                    <h1 style=" font-size: 40px;">Welcome Admin</h1>
+                    <br>
+                    
+        
+                </div>
+            </div>
+
+            <div id="options">
+                <center>
+                    <a target="output" href="frontend/views/addTrainer.html"> Add Trainer </a>
+                    <a target="output" href="/viewTrainer.html"> View/Delete Trainer </a>
+                    <a target="output" href="frontend/views/viewMember.html"> View/Delete Member </a>
+                </center>
+            </div>
+
+            <iframe id="output" name="output">
+
+            </iframe>
+
+        </div>
+    
+    </section>
+
+    </body>
+    
+    </html>
