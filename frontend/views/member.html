@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        #personal_training{
+        #personal_training,#chat_with_trainer{
             color:black; 
             font-family: Arial, Helvetica, sans-serif; 
             font-size: 20px;
@@ -14,7 +14,7 @@
             line-height: 40px;
             
         }
-        #personal_training:hover{
+        #personal_training:hover,#chat_with_trainer:hover{
             background-color: #de3838;
             transition: all .4s;
             color: white;
@@ -26,16 +26,23 @@
         
         function run(){
             var usertype = '<%= type %>' ;
+            var chat = document.getElementById('chat_with_trainer');
+            var personal_button = document.getElementById('personal_training');
 
             if(usertype == 'Normal'){ // normal
-                // do not hide button 
+                // do not hide button join button
+
+                // hide chat button
+                chat.style.display = "none";
             }else{
                 // personal  training 
                 // hide button
-                var personal_button = document.getElementById('personal_training');
+                
                 personal_button.style.display = "none";
+
+                
             }
-        }
+        } 
 
     </script>
     <meta charset="UTF-8">
@@ -108,6 +115,10 @@
                     <br>
                     <a style="text-decoration: none;" href="frontend/views/PT_Registration.html">
                         <h2 id="personal_training" >  JOIN Personal Training </h2>
+                    </a>
+
+                    <a style="text-decoration: none;" href="/memberChat.html">
+                        <h2 id="chat_with_trainer" >  Chat With Trainer </h2>
                     </a>
         
                 </div>

@@ -57,6 +57,29 @@ app.get(["/","/personaltraining.html"],function(req,res){
             console.log(req.session.user)
             res.render(__dirname+"/admin.html")
         }
+        else if(req.session.loginuser == "trainer"){
+            console.log("trainer login")
+            var getTrainerData = "SELECT * FROM trainer WHERE id = '"+req.session.user+"' "
+            con.query(getTrainerData,function(error,result){
+                if (error) throw error;
+                if(result.length){
+
+                    // Correct Credentials
+                    req.session.user = result[0].id;
+                    req.session.loginuser = "trainer";
+                    console.log(req.session.user)
+
+                    // res.render(__dirname+"/Trainer.html")
+                    res.render(__dirname+"/Trainer.html",{name:result[0].name,data:1})
+                        
+                }
+                else{
+                    // fake user
+                    req.session.user = -1
+                    res.render(__dirname+"/login.html",{fakeuser:"1"})
+                }
+            })
+        }
         else {
             var getUser = "SELECT * FROM members WHERE id ='"+req.session.user+"'";
             con.query(getUser,function(error,result){
@@ -70,7 +93,7 @@ app.get(["/","/personaltraining.html"],function(req,res){
 
                             // go to member page 
                             req.session.user = req.session.user 
-                            res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                            res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
                         }
                         else{
                             // go to home page Login successful 
@@ -141,7 +164,7 @@ app.post("/checklogin.html",function(req,res){
 
                         // go to member page - User already registered 
                         req.session.user = req.session.user 
-                        res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                        res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
                     }
                     else{
                         // go to home page Login successful 
@@ -181,6 +204,29 @@ app.post("/checklogin.html",function(req,res){
             }
         })
     }
+    else if(type == "trainer"){
+        console.log("trainer login")
+        var checkCredentials = "SELECT * FROM trainer WHERE email = '"+email+"' AND password = '"+pass+"' "
+        con.query(checkCredentials,function(error,result){
+            if (error) throw error;
+            if(result.length){
+
+                // Correct Credentials
+                req.session.user = result[0].id;
+                req.session.loginuser = "trainer";
+                console.log(req.session.user)
+
+                // res.render(__dirname+"/Trainer.html")
+                res.render(__dirname+"/Trainer.html",{name:result[0].name,data:1})
+                    
+            }
+            else{
+                // fake user
+                req.session.user = -1
+                res.render(__dirname+"/login.html",{fakeuser:"1"})
+            }
+        })
+    }
     else{
         res.sendFile(__dirname+"/home.html")
     }
@@ -191,7 +237,8 @@ app.post("/checklogin.html",function(req,res){
 app.get("/checklogin.html",function(req,res){
 
     // req.session.user = result[0].id;
-    console.log(req.session.user) 
+    console.log("user data : ")
+    console.log(req.session) 
     if(req.session.user)
     {
         if(req.session.user == "-10")
@@ -199,6 +246,29 @@ app.get("/checklogin.html",function(req,res){
             req.session.user = -10;
             console.log(req.session.user)
             res.render(__dirname+"/admin.html")
+        }
+        else if(req.session.loginuser == "trainer"){
+            console.log("trainer login")
+            var getTrainerData = "SELECT * FROM trainer WHERE id = '"+req.session.user+"' "
+            con.query(getTrainerData,function(error,result){
+                if (error) throw error;
+                if(result.length){
+
+                    // Correct Credentials
+                    req.session.user = result[0].id;
+                    req.session.loginuser = "trainer";
+                    console.log(req.session.user)
+
+                    // res.render(__dirname+"/Trainer.html")
+                    res.render(__dirname+"/Trainer.html",{name:result[0].name,data:1})
+                        
+                }
+                else{
+                    // fake user
+                    req.session.user = -1
+                    res.render(__dirname+"/login.html",{fakeuser:"1"})
+                }
+            })
         }
         else{
             var getUser = "SELECT * FROM members WHERE id ='"+req.session.user+"'";
@@ -213,7 +283,7 @@ app.get("/checklogin.html",function(req,res){
 
                             // go to member page 
                             req.session.user = req.session.user 
-                            res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                            res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
                         }
                         else{
                             // go to home page Login successful 
@@ -248,7 +318,7 @@ app.get(["/registration.html"],function(req,res){
             if (error) throw error;
             if(result.length){
                 req.session.user = req.session.user 
-                res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
             }
             else{
                 // 
@@ -280,7 +350,7 @@ app.post(["/registration.html"],function(req,res){
                 if (error) throw error;
                 if(result.length){
                     req.session.user = req.session.user 
-                    res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                    res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
                 }
                 else{
                     // fake user
@@ -405,7 +475,7 @@ app.post("/personaltraining.html",function(req,res){
                 if (error) throw error;
                 if(result.length){
                     req.session.user = req.session.user 
-                    res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining})
+                    res.render(__dirname+"/member.html",{name:result[0].firstname,data:1,type:result[0].personaltraining,userid:req.session.user})
                 }
                 else{
                     // 
@@ -469,38 +539,247 @@ app.get(["/viewTrainer.html"],function(req,res){
     con.query(checkAccount,function(error,result){
         if (error) throw error;
 
-        if(result.length){
-            console.log(result);
-            console.log(result.length+" Trainers Exists.");
-            r = "\["
-            for (let row = 0; row < result.length; row++) {
-                const user = result[row];
-                r += "\["
-                r += "\\\\\\\\'"+user.id+"\',"
-                r += "\'"+user.name+"\',"
-                r += "\'"+user.email+"\',"
-                r += "\'"+user.password+"\',"
-                r += "\'"+user.phone+"\'"
-                
-                if(row == result.length-1){
-                    r += "\]"
-                }
-                else{
-                    r += "\],"
-                }
-            }
-            r += "\]"
+        console.log(result);
+        console.log(result.length+" Trainers Exists.");
 
-            console.log(r)
-
-            res.render(__dirname+"/viewTrainer.html",{trainerdata:r});
-        }
-        else{
-            res.send(""); // send nothing 
-        }
+        res.render(__dirname+"/viewTrainer.html",{data:result});
+        
     })
 
     
 })
 
-app.listen(80);
+// view member page GET
+app.get(["/viewMember.html"],function(req,res){
+
+    var checkAccount = "SELECT members.id , assignedtrainer.memberid , members.email , members.password , members.phone "+
+    " , trainer.name as trainername FROM  members "+
+    " LEFT JOIN (assignedtrainer,trainer) ON members.id = assignedtrainer.memberid AND trainer.id = assignedtrainer.trainerid "
+   
+
+    con.query(checkAccount,function(error,result){
+        if (error) throw error;
+        console.log(result);
+    
+        console.log(result.length+" Members Exists. below is user data");
+        res.render(__dirname+"/viewMember.html",{data:result}); 
+    })
+
+})
+
+// Delete Trainer page POST Request
+app.post("/deleteTrainer.html",function(req,res){
+    var trainerid = req.body.userid;
+    console.log(trainerid)
+
+    var deleteTrainer = "DELETE FROM trainer WHERE id = '"+trainerid+"' " ;
+
+    con.query(deleteTrainer,function(error,result){
+        if (error) throw error;
+
+        // AFTER DELETE SHOW NORMAL TRAINER PAGE TO ADMIN
+        var checkAccount = "SELECT * FROM trainer";
+
+        con.query(checkAccount,function(error,result){
+            if (error) throw error;
+
+            res.render(__dirname+"/viewTrainer.html",{data:result});
+            
+        })
+        
+    });
+    
+})
+
+// Delete Member page POST Request
+app.post("/deleteMember.html",function(req,res){
+    var membersid = req.body.userid;
+    console.log(membersid)
+
+    var deleteTrainer = "DELETE FROM members WHERE id = '"+membersid+"' " ;
+
+    con.query(deleteTrainer,function(error,result){
+        if (error) throw error;
+
+        // AFTER DELETE SHOW NORMAL MEMBERS PAGE TO ADMIN
+        var checkAccount = "SELECT members.id , assignedtrainer.memberid , members.email , members.password , members.phone "+
+        " , trainer.name as trainername FROM  members "+
+        " LEFT JOIN (assignedtrainer,trainer) ON members.id = assignedtrainer.memberid AND trainer.id = assignedtrainer.trainerid "
+       
+    
+        con.query(checkAccount,function(error,result){
+            if (error) throw error;
+            console.log(result);
+        
+            console.log(result.length+" Members Exists. below is user data");
+            res.render(__dirname+"/viewMember.html",{data:result}); 
+        })
+    })
+    
+})
+
+
+// assignTrainer POST page
+app.post(["/assignTrainer.html"],function(req,res){
+    var checkAccount = "SELECT * FROM trainer";
+
+    console.log(req.body.userid)
+
+    con.query(checkAccount,function(error,result){
+        if (error) throw error;
+
+        res.render(__dirname+"/assignTrainer.html",{data:result,memberid:req.body.userid});
+        
+    })
+
+    
+})
+
+// saveaAssignedTrainer POST page
+app.post(["/saveAssignedTrainer.html"],function(req,res){
+    
+    console.log(req.body)
+
+    user1 = req.body.userid;
+    user2 = req.body.trainerid;
+
+    var insertEntry = "INSERT INTO assignedtrainer(memberid,trainerid) VALUES('"+user1+"' , '"+user2+"') "
+
+    con.query(insertEntry,function(error,result){
+        if (error) throw error;
+
+        // AFTER assigning trainer SHOW NORMAL MEMBERS PAGE TO ADMIN
+        var checkAccount = "SELECT members.id , assignedtrainer.memberid , members.email , members.password , members.phone "+
+        " , trainer.name as trainername FROM  members "+
+        " LEFT JOIN (assignedtrainer,trainer) ON members.id = assignedtrainer.memberid AND trainer.id = assignedtrainer.trainerid "
+       
+    
+        con.query(checkAccount,function(error,result){
+            if (error) throw error;
+            console.log(result);
+        
+            console.log(result.length+" Members Exists. below is user data");
+            res.render(__dirname+"/viewMember.html",{data:result}); 
+        })
+        
+    })
+
+    
+})
+
+// member chat page GET
+app.get("/memberChat.html",function(req,res){
+
+    if(req.session.user && req.session.user != -1){
+
+        var checkAssignedTrainer = "SELECT * FROM assignedtrainer,trainer WHERE memberid = '"+req.session.user+"' AND trainerid = trainer.id ";
+        req.session.user = req.session.user
+        con.query(checkAssignedTrainer,function(error,result){
+            if (error) throw error;
+
+            console.log(result)
+
+            if(result.length){
+                console.log("OK you can Chat  !! trainer allocated ")
+
+                // show chat if NO NEW message 
+
+                var getChat = "SELECT * FROM chat WHERE memberid = '"+req.session.user+"' ";
+
+                con.query(getChat,function(error,prevChat){
+                    if (error) throw error;
+
+                    console.log(prevChat)
+                    res.render(__dirname+"/memberChat.html",{trainer:1,data:result,chat:prevChat});
+                })
+
+            }else{
+                console.log("No Trainer assigned by Admin")
+                res.render(__dirname+"/memberChat.html",{trainer:0});
+            }
+            
+        })
+
+    }else{
+        req.session.user = -1
+        res.render(__dirname+"/login.html",{fakeuser:"0"});
+    }
+
+})
+
+// member chat page POST
+app.post("/memberChat.html",function(req,res){
+
+    if(req.session.user && req.session.user != -1){
+
+        var checkAssignedTrainer = "SELECT * FROM assignedtrainer,trainer WHERE memberid = '"+req.session.user+"' AND trainerid = trainer.id ";
+        req.session.user = req.session.user
+        con.query(checkAssignedTrainer,function(error,result){
+            if (error) throw error;
+
+            console.log(result)
+
+            if(result.length){
+                console.log("OK you can Chat  !! trainer allocated ")
+                // console.log(req.body.message)
+
+                // save chat
+                if(req.body.message){
+                    var memid  = req.session.user 
+                    var trainid = result[0].trainerid
+                    var sender = "member"
+                    var msg = req.body.message
+                    // console.log(memid,trainid,sender,msg)
+
+                    var saveMessage = "Insert into chat(memberid,trainerid,sender,message)"+
+                    "values('"+memid+"','"+trainid+"','"+sender+"','"+msg+"')";
+
+                    con.query(saveMessage,function(error,msgSaved){
+                        if (error) throw error;
+
+                        console.log("message sent")
+
+                        // show chat after saving the chat
+
+                        var getChat = "SELECT * FROM chat WHERE memberid = '"+memid+"' ";
+
+                        con.query(getChat,function(error,prevChat){
+                            if (error) throw error;
+
+                            // console.log(prevChat)
+                            res.render(__dirname+"/memberChat.html",{trainer:1,data:result,chat:prevChat});
+                        })
+
+                    })
+                }
+                else{
+                    // show chat if NO NEW message 
+
+                    var getChat = "SELECT * FROM chat WHERE memberid = '"+memid+"' ";
+
+                    con.query(getChat,function(error,prevChat){
+                        if (error) throw error;
+
+                        console.log(prevChat)
+                        res.render(__dirname+"/memberChat.html",{trainer:1,data:result,chat:prevChat});
+                    })
+
+                }
+
+            }else{
+                console.log("No Trainer assigned by Admin")
+                res.render(__dirname+"/memberChat.html",{trainer:0});
+            }
+            
+        })
+
+    }else{
+        req.session.user = -1
+        res.render(__dirname+"/login.html",{fakeuser:"0"});
+    }
+
+})
+
+
+
+app.listen(80)

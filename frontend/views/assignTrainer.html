@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/frontend/styles/adminwork.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+          
+            
+
+            <center>
+                <div class="col-md-6 right-box">
+                    <!-- <form action="/addTrainer.html" method="POST"> -->
+                    <div class="row align-items-center">
+                        <div class="header-text mb-4">
+                            <h2>Assign Trainer</h2>
+                            <p>Please choose the desired Trainer to assign.</p>
+                        </div>
+
+                        <form method="post" action="/saveAssignedTrainer.html">
+                            <input type="hidden" value="<%= memberid %>" name="userid">
+
+                            <div class="input-group mb-3">
+
+                                <select title="please select a trainer" class="form-control form-control-lg bg-light fs-6" required name="trainerid" id="trainer">
+                                    <option selected disabled value="">Choose Trainer</option> 
+                                    
+                                    <% if (data.length !== 0) { %>
+                                        <% data.forEach(function(result) { %>
+                                    
+                                            <option value="<%= result.id %>">
+                                                <%= result.name %>
+                                            </option>
+                                            
+                                        <% }); %>
+                                    <% } %> 
+                                </select>
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input style="width: 100px;" type="submit" value="Save Assigned Trainer" name="savebtn"
+                                    class="btn btn-lg btn-primary w-100 fs-6">
+                            </div>
+                            
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </center>
+
+                    
+    </body>
+</html>

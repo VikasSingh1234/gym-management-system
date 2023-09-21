@@ -21,7 +21,8 @@
 
 <body onload="showButton('<%= data %>');">
 
-    <nav id="home" class="navbar navbar-expand-lg">
+    <nav id="home" class="navbar fixed-top navbar-expand-lg" >
+        
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">
                 <h2>Fitness <span>Center</span></h2>
@@ -35,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link" aria-current="page" href="#main">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
@@ -75,7 +76,7 @@
     </nav>
     <!-- ############################ main-section ################-->
 
-    <section class="main py-5">
+    <section id="main" class="main py-5">
         <div class="container text-white py-5">
             <div class="row py-3">
                 <div class="col-lg-10">
@@ -96,15 +97,14 @@
         <div class="container py-5 text-center">
     
             <h1>OUR SERVICES</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-    
             <div class="row py-5">
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
                             <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <h5 class="py-3">Personal Training</h5>
+                            <p>Our certified trainers provide one-on-one sessions tailored to your fitness goals, ensuring a personalized workout plan and motivation to achieve results.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -112,9 +112,10 @@
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
-                            <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <span><i class="fa-solid fa-people-group"></i></span>
+                            <h5 class="py-3">Group Fitness Classes</h5>
+                            <p>Join our dynamic group fitness classes, including yoga, HIIT, spin, and more. Get energized with like-minded individuals and reach your fitness milestones together.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -122,9 +123,10 @@
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
-                            <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <span><i class="fa-solid fa-bowl-food"></i></span>
+                            <h5 class="py-3">Nutritional Guidance</h5>
+                            <p>Our experts offer personalized nutritional plans to complement your workouts, helping you maintain a balanced diet and reach your fitness objectives.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -135,9 +137,10 @@
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
-                            <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <span><i class="fa-solid fa-person-biking"></i></span>
+                            <h5 class="py-3">State-of-the-Art Equipment</h5>
+                            <p>Access top-notch gym equipment, including cardio machines, free weights, and resistance training, to optimize your workouts and target specific muscle groups.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -145,9 +148,10 @@
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
-                            <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <span><i class="fa-solid fa-spa"></i></span>
+                            <h5 class="py-3">Recovery & Wellness</h5>
+                            <p>Enhance your well-being with our recovery services, such as massages and stretching sessions, designed to reduce muscle tension and promote relaxation.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -155,9 +159,9 @@
                 <div class="col-lg-4">
                     <div class="card back border-0 p-3">
                         <div class="card-body">
-                            <span><i class="fa-solid fa-dumbbell"></i></span>
-                            <h5 class="py-3">WEIGHT LIFTING</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, laboriosam!</p>
+                            <span><i class="fa-solid fa-gears"></i></i></span>
+                            <h5 class="py-3">Specialized Programs</h5>
+                            <p>We offer specialized fitness programs for various goals, including weight loss, muscle building, and sports-specific training, ensuring we cater to your unique needs.</p>
                         </div>
                     </div>
                 </div>
@@ -182,11 +186,7 @@
                         WIDE <span>RANGE OF FITNESS</span> AND <br>
                         OTHER BODY HEALTH FACILITY
                     </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vero voluptatibus, odio
-                        eveniet impedit harum earum deleniti molestiae obcaecati ipsa necessitatibus id liberuptates
-                        amet.</p>
-
-                    <button class="btn1 mt-4">JOIN US</button>
+                    <p style="font-size:x-large;">Our team of dedicated fitness professionals boasts unparalleled skill and experience. We're not just trainers; we're your partners in achieving your fitness and health goals. Whether you're a fitness enthusiast or just starting your journey towards a healthier lifestyle, we have something for everyone.</p>
                 </div>
             </div>
         </div>
@@ -201,9 +201,7 @@
             <div class="row py-5">
                 <div class="col-lg-8 m-auto text-white text-center">
                     <p>DISCOVER YOUR POTENTIAL</p>
-                    <h1>TAKE SUBSCRIPTION NOW AND GET <br> <span>SUMMER 25% </span>DISCOUNT</h1>
-
-                    <button class="btn1 mt-5">JOIN TODAY</button>
+                    <h1>TAKE SUBSCRIPTION NOW AND GET <br> <span>25% </span>DISCOUNT</h1>
                 </div>
 
             </div>
@@ -217,10 +215,18 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>Personal Training</h4>
+
+                            <h6>One-on-One Sessions</h6>
+
+                            <p>Our certified trainers are here to give you personalized attention and guidance. Whether you're new to fitness or a seasoned athlete, our trainers will create a workout plan tailored to your goals.
+                                <br> <br>
+                                Single Session: 250
+                                <br>
+                                5 Sessions Package: 1100
+                                <br>
+                                10 Sessions Package: 2200
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -228,10 +234,18 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>Group Fitness Classes</h4>
+                            <h6>Energize and Motivate Together</h6>
+
+                            <p>Join our vibrant group fitness classes and workout with a community of like-minded individuals. From yoga to high-intensity interval training (HIIT), we offer a variety of classes to keep you motivated.
+
+                                <br> <br>
+                                Single Class Drop-In: 200
+                                <br>
+                                Monthly Unlimited Classes: 4000
+                                <br>
+                                Annual Unlimited Classes: 40000
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -239,10 +253,17 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>Nutritional Guidance</h4>
+                            <h6>Complement Your Workouts</h6>
+
+                            <p>Achieve optimal results by combining fitness with proper nutrition. Our experts will create a personalized nutritional plan to help you maintain a balanced diet and reach your fitness objectives.
+                                <br> <br>
+                                Nutritional Consultation: 500
+                                <br>
+                                3 Months Nutritional Plan: 12000
+                                <br>
+                                6 Months Nutritional Plan: 23000
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -256,10 +277,17 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>State-of-the-Art Equipment</h4>
+                    
+                            <h6>Access Premium Gym Equipment</h6>
+
+                            <p>Our gym is equipped with top-notch cardio machines, free weights, and resistance training equipment. Take advantage of our facilities to optimize your workouts and target specific muscle groups.
+                                <br> <br>
+                                Monthly Gym Access: 3000
+                                <br>
+                                Annual Gym Access: 30000
+    
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -267,10 +295,17 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>Recovery & Wellness</h4>
+                            <h6>Enhance Your Well-being</h6>
+
+                            <p>Invest in your recovery and overall well-being with our specialized services, including massages and stretching sessions. These services are designed to reduce muscle tension and promote relaxation.
+                                <br> <br>
+                                30-Minute Massage: 600
+                                <br>
+                                60-Minute Massage: 1200
+                                <br>
+                                Stretching Session: 1000
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -278,10 +313,13 @@
                 <div class="col-lg-4 mb-2">
                     <div class="card back border-0 py-5 px-3">
                         <div class="card-body">
-                            <h5>MODERN EQUIPMENT</h5>
-                            <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                                temporibus id quia minus voluptas ipsum suscipit ullam voluptatibus sunt nesciunt
-                                ratione optio, culpa odio.</p>
+                            <h4>Specialized Programs</h4>
+                            <h6>Catering to Your Unique Needs</h6>
+
+                            <p>Whether you're looking to lose weight, build muscle, or improve your sports performance, our specialized fitness programs are designed to meet your unique goals.
+                                <br> <br>
+                                Customized Program: Prices Vary (Contact us for a personalized quote)
+                            </p>
                         </div>
                     </div>
                 </div>

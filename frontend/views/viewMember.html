@@ -1,8 +1,74 @@
 <html>
     <head>
         <link rel="stylesheet" href="/frontend/styles/adminwork.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     </head>
     <body>
+        <center>
+            <div class="col-md-6 right-box">
+                <!-- <form action="/addTrainer.html" method="POST"> -->
+                <div class="row align-items-center">
+                     <div class="header-text mb-4">
+                        <h2>Members Data</h2>
+                        <p>Following is the members' information.</p>
+                    </div>
+                    
 
+                    
+                    <table border="0" style="text-align: center;">    
+                        
+                        <% if (data.length !== 0) { %>
+                            <tr>
+                                
+                                <th>Email Address</th>
+                                <th>Phone No.</th>
+                                <th>Password </th>
+                                <th>Trainer Assigned</th>
+                                <th> <!-- Delete Option --> </th>
+                              </tr>
+                          <% data.forEach(function(result) { %>
+                            <tr>
+                              
+                              <td><%= result.email %></td>
+                              <td><%= result.phone %></td>
+                              <td><%= result.password %></td>
+                              <td style="text-align: center; padding: 10px;">
+                                    <% if(result.trainername) { %> 
+                                        <!-- Trainer Assigned Name -->
+                                        <%= result.trainername %>
+                                    <% } else { %>
+                                        <!-- show button to assign trainer -->
+                                        <!-- <div style="margin: 0; padding: 0;" class="input-group mb-3"> -->
+                                            <form action="/assignTrainer.html" method="post">
+                                                <input type="hidden" name="userid" value="<%= result.id %>">
+                                                <button style=" height: 40px; line-height: 40px; padding: 0 5px;" class="btn btn-lg btn-primary w-100 fs-6">Assign Trainer</button>
+                                            </form>
+                                        <!-- </div> -->
+                                    <% }  %> 
+                                
+                              </td>
+                              <td>
+                                <!-- <div class="input-group mb-3"> -->
+                                    <form action="deleteMember.html" method="post">
+                                        <input type="hidden" name="userid" value="<%= result.id %>">
+                                        <button style=" height: 40px; line-height: 40px; padding: 0 10px;" class="btn btn-lg btn-primary w-100 fs-6">Delete Member</button>
+                                    </form>
+                                <!-- </div> -->
+                              </td>
+                            </tr>
+                          <% }); %>
+                        <% } else { %>
+                          
+                        <h1> 
+                            <br> No Data Found
+                        </h1>
+                        <% } %>
+
+                    </table>
+                </div>
+                <!-- </form> -->
+            </div> 
+        </center>
     </body>
 </html>

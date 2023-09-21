@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2023 at 05:21 PM
+-- Generation Time: Sep 19, 2023 at 04:04 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -43,6 +43,51 @@ INSERT INTO `admin` (`id`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `assignedtrainer`
+--
+
+CREATE TABLE `assignedtrainer` (
+  `id` int(11) NOT NULL,
+  `memberid` int(11) NOT NULL,
+  `trainerid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assignedtrainer`
+--
+
+INSERT INTO `assignedtrainer` (`id`, `memberid`, `trainerid`) VALUES
+(6, 30, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `cid` int(10) NOT NULL,
+  `memberid` int(10) NOT NULL,
+  `trainerid` int(10) NOT NULL,
+  `sender` text NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`cid`, `memberid`, `trainerid`, `sender`, `message`) VALUES
+(107, 30, 10, 'member', 'Hello Sir'),
+(108, 30, 10, 's', 'han beta bolo'),
+(109, 30, 10, 'member', 'kaise hai aap '),
+(110, 30, 10, 's', 'mai theek hu'),
+(111, 30, 10, 's', 'tu bta '),
+(112, 30, 10, 'member', 'mai bhi theek');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `members`
 --
 
@@ -60,7 +105,8 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `email`, `password`, `phone`, `verifycode`, `verified`) VALUES
-(29, 'n@n', '1', 8219114125, 94031251, 1);
+(30, 'naman@naman', '1234', 12346, 65454, 1),
+(32, 'vikas@member', '1234', 2314678945, 3423, 1);
 
 -- --------------------------------------------------------
 
@@ -96,7 +142,8 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`registerid`, `id`, `firstname`, `lastname`, `address1`, `address2`, `city`, `state`, `currentweight`, `goalweight`, `age`, `height`, `healthcondition`, `personaltraining`, `shoulder`, `chest`, `waist`, `hip`, `bicep`, `thigh`) VALUES
-(25, 29, 'naman', 'puri', 'sdajfklsa', 'jksld;f', 'jskld;f', 'jklds;f', 23, 32, 23, 23, 'sdf', 'Personal', 1, 2, 3, 4, 5, 6);
+(26, 30, 'naman', 'puri', 'puri', 'niwas', 'nadaun', 'himachal', 90, 90, 40, 500, 'All Ok', 'Personal', 4, 3, 43, 43, 34, 43),
+(27, 32, 'vikas', 'singh', '123', '456', 'patiala', 'punjab', 90, 90, 32, 32, 'Ok', 'Personal', 44, 33, 22, 55, 22, 33);
 
 -- --------------------------------------------------------
 
@@ -109,7 +156,7 @@ CREATE TABLE `trainer` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `phone` bigint(12) NOT NULL
+  `phone` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -117,12 +164,27 @@ CREATE TABLE `trainer` (
 --
 
 INSERT INTO `trainer` (`id`, `name`, `email`, `password`, `phone`) VALUES
-(1, 'Naman Puri', 'naman@puri', '1234', 12312312312),
-(2, 'Vikas', 'vikas@trainer', '1122', 12345);
+(6, 'Akshat Srivastava', 'akshat@trainer', '1234', 1234567890),
+(7, 'Naman Puri', 'namanpuri@trainer', '1232', 2192120000),
+(8, 'Vikas singh', 'vikas@trainer', 'abcd', 8569456123),
+(9, 'Bulbul Chobey', 'bulbul@trainer', '1234', 9345682456),
+(10, 'Rajat Kumar', 'rajat@trainer', '1234', 2324324234);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `assignedtrainer`
+--
+ALTER TABLE `assignedtrainer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`cid`);
 
 --
 -- Indexes for table `members`
@@ -147,22 +209,34 @@ ALTER TABLE `trainer`
 --
 
 --
+-- AUTO_INCREMENT for table `assignedtrainer`
+--
+ALTER TABLE `assignedtrainer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+
+--
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `registerid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `registerid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
